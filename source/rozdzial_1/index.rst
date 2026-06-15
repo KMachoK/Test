@@ -23,8 +23,7 @@ Projekt został podzielony na odpowiednie repozytoria w systemie kontroli wersji
 ---------------------------------------------------------
 Tutaj znajduje się struktura całej dokumentacji tekstowej, konfiguracja kompilatora Sphinx oraz historia zmian.
 
-* **Link:**
-
+* **Link:** https://github.com/KMachoK/Test.git
 2. Repozytorium z plikami projektowymi
 --------------------------------------
 W tym repozytorium umieszczono kody źródłowe, skrypty DDL dla silników PostgreSQL i SQLite, wygenerowany plik bazy oraz pliki CSV wykorzystywane do zasilania bazy danych.
