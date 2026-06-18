@@ -151,25 +151,25 @@ Wiktor Wydrzyński
 \end{description}\end{quote}
 
 
-\section{Wstęp do sprawozdania}
-\label{\detokenize{rozdzial_1/index:wstep-do-sprawozdania}}
+\section{Wstęp}
+\label{\detokenize{rozdzial_1/index:wstep}}
 \sphinxAtStartPar
-Niniejsze sprawozdanie dokumentuje przebieg prac laboratoryjnych z przedmiotu Bazy Danych. Celem projektu jest praktyczne zastosowanie wiedzy z zakresu projektowania, wdrażania oraz obsługi systemów relacyjnych baz danych.
+Niniejsze sprawozdanie stanowi kompleksową dokumentację prac laboratoryjnych zrealizowanych w ramach przedmiotu Bazy Danych. Głównym założeniem projektu było przełożenie wiedzy akademickiej na praktyczne umiejętności inżynierskie, niezbędne przy projektowaniu, implementacji oraz utrzymaniu nowoczesnych systemów relacyjnych baz danych.
 
 \sphinxAtStartPar
-Praca obejmuje pełen cykl życia bazy: od analizy teoretycznej, poprzez stworzenie modelu pojęciowego i logicznego, aż po fizyczną implementację w środowiskach PostgreSQL i SQLite, a także realizację procesów wsadowego zasilania danymi.
+Opracowanie przeprowadza czytelnika przez pełen cykl życia systemu bazodanowego. Proces rozpoczął się od dogłębnej analizy wymagań teoretycznych, co posłużyło jako fundament do zaprojektowania modelu pojęciowego i logicznego. Następnie architektura ta została powołana do życia poprzez fizyczną implementację w środowiskach PostgreSQL oraz SQLite. Istotnym elementem projektu była również automatyzacja i realizacja procesów wsadowego zasilania struktury rzeczywistymi danymi.
 
 
 \section{Wykaz repozytoriów (Linki)}
 \label{\detokenize{rozdzial_1/index:wykaz-repozytoriow-linki}}
 \sphinxAtStartPar
-Projekt został podzielony na odpowiednie repozytoria w systemie kontroli wersji Git, zapewniając porządek między dokumentacją a fizycznymi plikami środowiska bazodanowego.
+Zgodnie z dobrymi praktykami inżynierii oprogramowania, projekt został logicznie rozdzielony na odrębne repozytoria w rozproszonym systemie kontroli wersji Git. Takie podejście gwarantuje utrzymanie porządku, separację dokumentacji tekstowej od kodu wykonywalnego oraz ułatwia śledzenie historii zmian w poszczególnych komponentach.
 
 
-\subsection{1. Główne repozytorium sprawozdania (Dokumentacja Sphinx)}
+\subsection{Główne repozytorium sprawozdania (Dokumentacja Sphinx)}
 \label{\detokenize{rozdzial_1/index:glowne-repozytorium-sprawozdania-dokumentacja-sphinx}}
 \sphinxAtStartPar
-Tutaj znajduje się struktura całej dokumentacji tekstowej, konfiguracja kompilatora Sphinx oraz historia zmian.
+Niniejsze repozytorium pełni rolę centralnego węzła dokumentacyjnego. Znajduje się w nim pełna struktura tekstowa zapisana w formacie reStructuredText, niezbędna konfiguracja generatora dokumentacji Sphinx (plik \sphinxcode{\sphinxupquote{conf.py}}) oraz pliki konfiguracyjne środowiska budowania (np. pliki Makefile).
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
@@ -178,10 +178,10 @@ Tutaj znajduje się struktura całej dokumentacji tekstowej, konfiguracja kompil
 \end{itemize}
 
 
-\subsection{2. Repozytorium z plikami projektowymi}
+\subsection{Repozytorium z plikami projektowymi}
 \label{\detokenize{rozdzial_1/index:repozytorium-z-plikami-projektowymi}}
 \sphinxAtStartPar
-W tym repozytorium umieszczono kody źródłowe, skrypty DDL dla silników PostgreSQL i SQLite, wygenerowany plik bazy oraz pliki CSV wykorzystywane do zasilania bazy danych.
+To repozytorium przechowuje właściwe pliki inżynierskie i deweloperskie. Zgromadzono w nim skrypty DDL definiujące struktury dla silników PostgreSQL i SQLite, wygenerowany plik lokalnej bazy danych oraz zbiory danych w formacie CSV, które wykorzystano do automatycznego zasilenia poszczególnych tabel.
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
@@ -190,10 +190,10 @@ W tym repozytorium umieszczono kody źródłowe, skrypty DDL dla silników Postg
 \end{itemize}
 
 
-\subsection{3. Repozytoria reszty grupy}
-\label{\detokenize{rozdzial_1/index:repozytoria-reszty-grupy}}
+\subsection{Repozytoria reszty grupy (Submoduły)}
+\label{\detokenize{rozdzial_1/index:repozytoria-reszty-grupy-submoduly}}
 \sphinxAtStartPar
-Poniżej znajdują się odnośniki do repozytoriów reszty grupy, które zostały zintegrowane z niniejszym sprawozdaniem w postaci submodułów w Rozdziale 2:
+Poniższa sekcja zawiera wykaz repozytoriów, w których zespoły opracowywały dedykowane tematy specjalistyczne. Aby zapewnić spójność ostatecznego dokumentu, repozytoria te zostały zintegrowane z głównym projektem jako submoduły (submodules) i stanowią treść Rozdziału 2.
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
