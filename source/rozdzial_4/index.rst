@@ -1,6 +1,6 @@
-=====================================================
-Implementacja bazy danych i import danych
-=====================================================
+=========================================
+Implementacja bazy danych i import danych 
+=========================================
 
 .. toctree::
    :maxdepth: 2
@@ -9,7 +9,7 @@ Implementacja bazy danych i import danych
 
 W ramach czwartego rozdziału zrealizowano dwa kluczowe etapy prac wdrożeniowych: utworzenie struktur tabelarycznych zdefiniowanych w modelu fizycznym oraz wdrożenie zoptymalizowanych mechanizmów importu danych testowych. Prace przeprowadzono w sposób równoległy dla środowiska lokalnego opartego na silniku SQLite oraz serwerowego wykorzystującego system PostgreSQL.
 
-4.1. Definicja i inicjalizacja struktur danych
+Definicja i inicjalizacja struktur danych
 ==============================================
 
 Pierwszym etapem wdrażania systemu bazodanowego było przeniesienie założeń modelu fizycznego do wytypowanych systemów zarządzania bazami danych (DBMS). Proces ten wymagał adaptacji skryptów DDL (Data Definition Language) do specyficznych dialektów SQL obsługiwanych przez wybrane środowiska.
@@ -58,12 +58,12 @@ W środowisku **SQLite**, będącym lekką bazą wbudowaną, wykorzystano uprosz
         FOREIGN KEY (ID_Klienta) REFERENCES Klienci(ID_Klienta)
     );
 
-4.2. Zasilenie bazy danymi demonstracyjnymi
+Zasilenie bazy danymi demonstracyjnymi
 ===========================================
 
 Na etapie testowania architektury modelu fizycznego, puste relacje zostały zasilone małym zbiorem danych demonstracyjnych wykorzystując klasyczne polecenia DML z rodziny ``INSERT``. Procedura ta miała na celu weryfikację poprawności działania nałożonych ograniczeń integralnościowych – na przykład weryfikację unikalności numerów PESEL i numerów rejestracyjnych pojazdów oraz zgodność typów asocjacyjnych.
 
-4.3. Koncepcja mechanizmów masowego importu (ETL)
+Koncepcja mechanizmów masowego importu (ETL)
 =================================================
 
 Dla zasymulowania warunków produkcyjnych i obciążenia systemów większym wolumenem rekordów, utworzono standaryzowany plik formatu CSV reprezentujący logikę płaskich rekordów z informacjami o potencjalnych klientach.
