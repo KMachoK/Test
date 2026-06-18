@@ -1,175 +1,108 @@
-=========================================
-Zadanie Laboratoryjne - wypożyczalnia aut
-=========================================
+=====================================================
+Implementacja bazy danych i import danych
+=====================================================
 
 .. toctree::
    :maxdepth: 2
    :caption: Spis treści:
 
-Wprowadzenie
-============
-Wybranym zagadnieniem jest system obsługi wypożyczalni samochodów. Aplikacja służy do gromadzenia informacji o klientach, dostępnej flocie pojazdów (z podziałem na kategorie cenowe) oraz do ewidencjonowania procesu wypożyczeń (rezerwacji).
 
-Opis procesów i towarzyszących im danych
-========================================
+W ramach czwartego rozdziału zrealizowano dwa kluczowe etapy prac wdrożeniowych: utworzenie struktur tabelarycznych zdefiniowanych w modelu fizycznym oraz wdrożenie zoptymalizowanych mechanizmów importu danych testowych. Prace przeprowadzono w sposób równoległy dla środowiska lokalnego opartego na silniku SQLite oraz serwerowego wykorzystującego system PostgreSQL.
 
-**Gromadzone dane:**
+4.1. Definicja i inicjalizacja struktur danych
+==============================================
 
-* **Kategorie:** unikalne ID, nazwa kategorii, cena za dzień.
-* **Klienci:** unikalne ID, imię, nazwisko, PESEL, numer prawa jazdy, telefon, e-mail.
-* **Samochody:** unikalne ID, marka, model, numer rejestracyjny, rok produkcji, przypisanie do kategorii.
-* **Wypożyczenia:** unikalne ID, identyfikator klienta, identyfikator samochodu, data rozpoczęcia, data zakończenia, status rezerwacji.
+Pierwszym etapem wdrażania systemu bazodanowego było przeniesienie założeń modelu fizycznego do wytypowanych systemów zarządzania bazami danych (DBMS). Proces ten wymagał adaptacji skryptów DDL (Data Definition Language) do specyficznych dialektów SQL obsługiwanych przez wybrane środowiska.
 
-**Opis procesów i więzy integralności:**
-
-1. **Rejestracja klienta:** Zapis danych osobowych. Pola takie jak PESEL i numer prawa jazdy są objęte więzami unikalności (UNIQUE).
-2. **Dodanie pojazdu do floty:** Pojazd przypisywany jest do zdefiniowanej wcześniej kategorii cenowej (klucz obcy). Numer rejestracyjny musi być unikalny.
-3. **Proces wypożyczenia:** System tworzy relację między klientem a pojazdem w określonym przedziale czasu. Występuje tu więz integralności (CHECK) wymuszający, aby data zakończenia wypożyczenia była większa lub równa dacie rozpoczęcia.
-
-Prototypowy plik JSON i CSV
-===========================
-
-**Format JSON:**
-
-.. code-block:: json
-
-   {
-       "id_klienta": 1,
-       "imie": "Jan",
-       "nazwisko": "Kowalski",
-       "pesel": "90051412345",
-       "nr_prawa_jazdy": "12345/67/8901",
-       "telefon": "+48123456789",
-       "email": "jan.kowalski@email.com"
-   }
-
-**Format CSV:**
-
-.. code-block:: text
-
-   id_klienta,imie,nazwisko,pesel,nr_prawa_jazdy,telefon,email
-   1,Jan,Kowalski,90051412345,12345/67/8901,+48123456789,jan.kowalski@email.com
-
-Dobór typów danych dla wybranych silników
------------------------------------------
-
-.. list-table:: 
-   :widths: 30 35 35
-   :header-rows: 1
-
-   * - Atrybut / Pole
-     - Typ w PostgreSQL
-     - Typ w SQLite
-   * - **Klucze Główne**
-     - ``SERIAL`` / ``INT GENERATED ALWAYS``
-     - ``INTEGER PRIMARY KEY``
-   * - **Teksty (Imię, Nazwisko)**
-     - ``VARCHAR(X)``
-     - ``TEXT``
-   * - **Kody i ID (PESEL)**
-     - ``VARCHAR(X)``
-     - ``TEXT``
-   * - **Rok produkcji**
-     - ``SMALLINT``
-     - ``INTEGER``
-   * - **Cena**
-     - ``NUMERIC(10, 2)``
-     - ``REAL``
-   * - **Daty**
-     - ``DATE``
-     - ``TEXT``
-
-Model koncepcyjny, logiczny i normalizacja
-==========================================
-
-W systemie zidentyfikowano encje: **Klient** oraz **Samochód**, które łączą się relacją Wiele-do-Wielu (M:N). Aby uniknąć błędów projektowych (np. pułapek połączeń), zdefiniowano encję asocjacyjną **Wypożyczenie**, rozbijającą tę relację na dwie relacje Jeden-do-Wielu (1:N). 
-
-W celu zachowania poprawności danych bazę doprowadzono do **Trzeciej Postaci Normalnej (3NF)**. Wydzielono tabelę **Kategorie**, dzięki czemu atrybut ceny zależy bezpośrednio od kategorii, a nie od konkretnego egzemplarza samochodu.
-
-Model fizyczny bazy danych
-==========================
-
-1. Implementacja w PostgreSQL
------------------------------
+W przypadku **PostgreSQL**, definicje tabel utworzono wykorzystując zaawansowane typy danych (np. ``NUMERIC``) oraz współczesne metody autoinkrementacji kluczy głównych poprzez klauzulę ``GENERATED ALWAYS AS IDENTITY``. Poniżej przedstawiono implementację dla kluczowych tabel, ilustrującą nałożone więzy integralności (unikalność i kontrolę dat):
 
 .. code-block:: sql
 
-   CREATE TABLE Kategorie (
-       ID_Kategorii INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-       Nazwa VARCHAR(50) NOT NULL,
-       Cena_Za_Dzien NUMERIC(8, 2) NOT NULL
-   );
+    -- Fragment definicji kluczowych tabel (PostgreSQL)
+    CREATE TABLE Klienci (
+        ID_Klienta INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+        Imie VARCHAR(50) NOT NULL,
+        Nazwisko VARCHAR(100) NOT NULL,
+        PESEL VARCHAR(11) UNIQUE NOT NULL,
+        Nr_Prawa_Jazdy VARCHAR(20) UNIQUE
+    );
 
-   CREATE TABLE Klienci (
-       ID_Klienta INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-       Imie VARCHAR(50) NOT NULL,
-       Nazwisko VARCHAR(100) NOT NULL,
-       PESEL VARCHAR(11) UNIQUE NOT NULL,
-       Nr_Prawa_Jazdy VARCHAR(20) UNIQUE,
-       Telefon VARCHAR(15),
-       Email VARCHAR(100)
-   );
+    CREATE TABLE Wypozyczenia (
+        ID_Wypozyczenia INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+        ID_Klienta INT NOT NULL,
+        Data_Od DATE NOT NULL,
+        Data_Do DATE NOT NULL,
+        CONSTRAINT fk_klient FOREIGN KEY (ID_Klienta) REFERENCES Klienci(ID_Klienta),
+        CONSTRAINT sprawdz_daty CHECK (Data_Do >= Data_Od)
+    );
 
-   CREATE TABLE Samochody (
-       ID_Samochodu INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-       Marka VARCHAR(50) NOT NULL,
-       Model VARCHAR(50) NOT NULL,
-       Nr_Rejestracyjny VARCHAR(15) UNIQUE NOT NULL,
-       Rok_Produkcji SMALLINT CHECK (Rok_Produkcji > 1900),
-       ID_Kategorii INT,
-       CONSTRAINT fk_kategoria FOREIGN KEY (ID_Kategorii) REFERENCES Kategorie(ID_Kategorii)
-   );
-
-   CREATE TABLE Wypozyczenia (
-       ID_Wypozyczenia INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-       ID_Klienta INT NOT NULL,
-       ID_Samochodu INT NOT NULL,
-       Data_Od DATE NOT NULL,
-       Data_Do DATE NOT NULL,
-       Status VARCHAR(20) DEFAULT 'Zarezerwowane',
-       CONSTRAINT fk_klient FOREIGN KEY (ID_Klienta) REFERENCES Klienci(ID_Klienta),
-       CONSTRAINT fk_samochod FOREIGN KEY (ID_Samochodu) REFERENCES Samochody(ID_Samochodu),
-       CONSTRAINT sprawdz_daty CHECK (Data_Do >= Data_Od)
-   );
-
-2. Implementacja w SQLite
--------------------------
+W środowisku **SQLite**, będącym lekką bazą wbudowaną, wykorzystano uproszczone mapowanie typów (``INTEGER``, ``TEXT``). Proces inicjalizacji wymagał wywołania procedury aktywującej wsparcie dla więzów referencyjnych za pomocą dyrektywy ``PRAGMA foreign_keys = ON;``, co zostało zaprezentowane na poniższym fragmencie kodu implementującego tabele z kluczem obcym:
 
 .. code-block:: sql
 
-   CREATE TABLE Kategorie (
-       ID_Kategorii INTEGER PRIMARY KEY,
-       Nazwa TEXT NOT NULL,
-       Cena_Za_Dzien REAL NOT NULL
-   );
+    -- Fragment definicji kluczowych tabel (SQLite)
+    PRAGMA foreign_keys = ON;
 
-   CREATE TABLE Klienci (
-       ID_Klienta INTEGER PRIMARY KEY,
-       Imie TEXT NOT NULL,
-       Nazwisko TEXT NOT NULL,
-       PESEL TEXT UNIQUE NOT NULL,
-       Nr_Prawa_Jazdy TEXT UNIQUE,
-       Telefon TEXT,
-       Email TEXT
-   );
+    CREATE TABLE Klienci (
+        ID_Klienta INTEGER PRIMARY KEY,
+        Imie TEXT NOT NULL,
+        Nazwisko TEXT NOT NULL,
+        PESEL TEXT UNIQUE NOT NULL
+    );
 
-   CREATE TABLE Samochody (
-       ID_Samochodu INTEGER PRIMARY KEY,
-       Marka TEXT NOT NULL,
-       Model TEXT NOT NULL,
-       Nr_Rejestracyjny TEXT UNIQUE NOT NULL,
-       Rok_Produkcji INTEGER,
-       ID_Kategorii INTEGER,
-       FOREIGN KEY (ID_Kategorii) REFERENCES Kategorie(ID_Kategorii)
-   );
+    CREATE TABLE Wypozyczenia (
+        ID_Wypozyczenia INTEGER PRIMARY KEY,
+        ID_Klienta INTEGER,
+        Data_Od TEXT NOT NULL,
+        Data_Do TEXT NOT NULL,
+        FOREIGN KEY (ID_Klienta) REFERENCES Klienci(ID_Klienta)
+    );
 
-   CREATE TABLE Wypozyczenia (
-       ID_Wypozyczenia INTEGER PRIMARY KEY,
-       ID_Klienta INTEGER,
-       ID_Samochodu INTEGER,
-       Data_Od TEXT NOT NULL,
-       Data_Do TEXT NOT NULL,
-       Status TEXT NOT NULL,
-       FOREIGN KEY (ID_Klienta) REFERENCES Klienci(ID_Klienta),
-       FOREIGN KEY (ID_Samochodu) REFERENCES Samochody(ID_Samochodu)
-   );
+4.2. Zasilenie bazy danymi demonstracyjnymi
+===========================================
+
+Na etapie testowania architektury modelu fizycznego, puste relacje zostały zasilone małym zbiorem danych demonstracyjnych wykorzystując klasyczne polecenia DML z rodziny ``INSERT``. Procedura ta miała na celu weryfikację poprawności działania nałożonych ograniczeń integralnościowych – na przykład weryfikację unikalności numerów PESEL i numerów rejestracyjnych pojazdów oraz zgodność typów asocjacyjnych.
+
+4.3. Koncepcja mechanizmów masowego importu (ETL)
+=================================================
+
+Dla zasymulowania warunków produkcyjnych i obciążenia systemów większym wolumenem rekordów, utworzono standaryzowany plik formatu CSV reprezentujący logikę płaskich rekordów z informacjami o potencjalnych klientach.
+
+Zarówno dla SQLite, jak i PostgreSQL, pierwszym krokiem w środowisku języka Python było odczytanie płaskiego pliku i przeniesienie go do ustrukturyzowanej, iterowalnej pamięci RAM (np. w postaci listy list):
+
+.. code-block:: python
+
+    import csv
+
+    # Wczytywanie danych z pliku CSV do struktury iterowalnej
+    with open('klienci.csv', 'r', encoding='utf-8') as plik_csv:
+        reader = csv.reader(plik_csv)
+        next(reader) # Pominięcie wiersza z nagłówkami
+        dane_z_csv = [row for row in reader]
+
+Mając przygotowaną strukturę w pamięci aplikacji, przystąpiono do operacji ładowania danych, przyjmując strategie adekwatne do natury silników bazodanowych.
+
+Mechanizm COPY w PostgreSQL
+---------------------------
+Ze względu na architekturę klient-serwer, przesyłanie tysięcy pojedynczych zapytań ``INSERT`` wiąże się z ogromnym kosztem operacyjnym ze względu na opóźnienia sieciowe oraz narzut parsowania po stronie serwera. Wdrożono zatem natywną dla PostgreSQL instrukcję ``COPY`` obsługującą strumieniowanie wejścia (``STDIN``):
+
+.. code-block:: python
+
+    # Właściwy proces wsadowego importu do bazy PostgreSQL
+    # (Zakładając aktywne połączenie psycopg2/psycopg3 pod zmienną conn_pg)
+    
+    with conn_pg.cursor() as cursor_pg:
+        # Zastosowanie strumieniowania binarnego wprost do pamięci buforowej Postgresa
+        with cursor_pg.copy(
+            "COPY Klienci (Imie, Nazwisko, PESEL, Nr_Prawa_Jazdy, Telefon, Email) FROM STDIN"
+        ) as copy_operation:
+            for row in dane_z_csv:
+                copy_operation.write_row(row)
+                
+    conn_pg.commit()
+
+Takie podejście buduje ciągły potok danych bezpośrednio do pliku tabeli, omijając standardową kontrolę transakcyjną planisty (query planner) dla każdego pojedynczego wiersza z osobna, co jest referencyjnym wzorcem w środowiskach inżynierii danych.
+
+Mechanizm Batch Insert w SQLite
+-------------------------------
+W silniku SQLite wykorzystano z kolei grupowanie instrukcji poprzez metodę ``executemany()`` dostępną w sterowniku języka Python. Ponieważ cała baza jest jednoplikowa, wykonanie całego wsadu w obrębie jednej otwartej i zatwierdzonej tylko raz na końcu transakcji redukuje obciążenie I/O systemu plików do minimum.
