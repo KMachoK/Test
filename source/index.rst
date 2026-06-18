@@ -15,11 +15,10 @@ Dokumentacja została podzielona na pięć głównych sekcji:
 
 .. toctree::
    :maxdepth: 1
-   :caption: spis treści:
-   :numbered:
+   :caption: Spis treści:
 
-   rozdzial_1/index
-   rozdzial_2/index
-   rozdzial_3/index
-   rozdzial_4/index
-   rozdzial_5/index
+   ./rozdzial_1/index
+   ./rozdzial_2/index
+   ./rozdzial_3/index
+   ./rozdzial_4/index
+   ./rozdzial_5/index
