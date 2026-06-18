@@ -124,9 +124,10 @@
 \contentsline {subsection}{\numberline {3.5.1}Model fizyczny dla środowiska SQLite}{31}{subsection.3.5.1}%
 \contentsline {subsection}{\numberline {3.5.2}Model fizyczny dla środowiska PostgreSQL}{31}{subsection.3.5.2}%
 \contentsline {chapter}{\numberline {4}Implementacja bazy danych i import danych}{32}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Definicja i inicjalizacja struktur danych}{32}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Zasilenie bazy danymi demonstracyjnymi}{33}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Koncepcja mechanizmów masowego importu (ETL)}{33}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Mechanizm COPY w PostgreSQL}{33}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Mechanizm Batch Insert w SQLite}{34}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.1}Wprowadzenie}{32}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Definicja i inicjalizacja struktur danych}{32}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Zasilenie bazy danymi demonstracyjnymi}{33}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Koncepcja mechanizmów masowego importu (ETL)}{33}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Mechanizm COPY w PostgreSQL}{33}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Mechanizm Batch Insert w SQLite}{34}{subsection.4.4.2}%
 \contentsline {chapter}{\numberline {5}Zadanie 5}{35}{chapter.5}%

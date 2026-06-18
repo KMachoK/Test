@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.6.18)  18 JUN 2026 18:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.6.18)  18 JUN 2026 19:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -916,13 +916,13 @@ L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `sprawozdanie-z-laboratoriow.out' has not cha
 nged.
-(rerunfilecheck)             Checksum: 1A10A6E651D7E6F4E75648C138EAF560;30280.
+(rerunfilecheck)             Checksum: 8000BAC726108E99ED07490A85129FF5;30396.
  ) 
 Here is how much of TeX's memory you used:
- 17410 strings out of 476147
- 300978 string characters out of 5794719
- 1972975 words of memory out of 5000000
- 38781 multiletter control sequences out of 15000+600000
+ 17413 strings out of 476147
+ 301033 string characters out of 5794719
+ 1974975 words of memory out of 5000000
+ 38783 multiletter control sequences out of 15000+600000
  626566 words of font info for 103 fonts, out of 8000000 for 9000
  35 hyphenation exceptions out of 8191
  72i,13n,83p,1216b,680s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -935,10 +935,10 @@ texmf/fonts/type1/public/tex-gyre/qhvb.pfb></usr/share/texmf/fonts/type1/public
 fonts/t1xbtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xt
 t.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/txfonts/tcxtt.pfb>
-Output written on sprawozdanie-z-laboratoriow.pdf (38 pages, 325508 bytes).
+Output written on sprawozdanie-z-laboratoriow.pdf (38 pages, 325333 bytes).
 PDF statistics:
- 979 PDF objects out of 1000 (max. 8388607)
- 911 compressed objects within 10 object streams
- 226 named destinations out of 1000 (max. 500000)
- 1069 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 984 PDF objects out of 1000 (max. 8388607)
+ 916 compressed objects within 10 object streams
+ 227 named destinations out of 1000 (max. 500000)
+ 1077 words of extra memory for PDF output out of 10000 (max. 10000000)
 
