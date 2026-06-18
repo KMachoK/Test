@@ -1,6 +1,6 @@
-============================
-Rozdział 1: Wstęp oraz linki
-============================
+================================
+Wstęp do sprawozdania oraz linki
+================================
 
 :Autorzy:
     1. Olaf Chomicki
