@@ -23,13 +23,13 @@ Główne repozytorium sprawozdania (Dokumentacja Sphinx)
 ------------------------------------------------------
 Niniejsze repozytorium pełni rolę centralnego węzła dokumentacyjnego. Znajduje się w nim pełna struktura tekstowa zapisana w formacie reStructuredText, niezbędna konfiguracja generatora dokumentacji Sphinx (plik ``conf.py``) oraz pliki konfiguracyjne środowiska budowania (np. pliki Makefile).
 
-* **Link:** https://github.com/KMachoK/Test.git
+* **Link:** https://github.com/KMachoK/Repozytorium-Glowne.git
 
 Repozytorium z plikami projektowymi
 -----------------------------------
 To repozytorium przechowuje właściwe pliki inżynierskie i deweloperskie. Zgromadzono w nim skrypty DDL definiujące struktury dla silników PostgreSQL i SQLite, wygenerowany plik lokalnej bazy danych oraz zbiory danych w formacie CSV, które wykorzystano do automatycznego zasilenia poszczególnych tabel.
 
-* **Link:** https://github.com/KMachoK/Test.git
+* **Link:** https://github.com/KMachoK/Repozytorium-Glowne.git
 
 Repozytoria reszty grupy (Submoduły)
 ------------------------------------
