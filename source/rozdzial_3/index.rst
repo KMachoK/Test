@@ -5,6 +5,7 @@ Dokumentacja modelu bazy danych wypożyczalni samochodów
     1. Olaf Chomicki
     2. Konrad Machowski
     3. Wiktor Wydrzyński
+
 Wybór zagadnienia i opis procesów
 =================================
 
