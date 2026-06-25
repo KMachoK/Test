@@ -3,7 +3,7 @@ Wstęp do sprawozdania oraz linki
 ================================
 
 :Autorzy:
-    1. Olaf Chomicki
+    1. Olaf Chomickis
     2. Konrad Machowski
     3. Wiktor Wydrzyński
 
