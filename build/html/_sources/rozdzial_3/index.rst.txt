@@ -91,6 +91,7 @@ Model w notacji Chena
 .. figure:: /_static/Schemat-chena.png
    :width: 80%
    :align: center
+   :figclass: H
    :alt: Schemat Chena dla bazy danych
 
    Schemat logiczny bazy danych (Schemat Chena).
