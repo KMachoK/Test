@@ -150,25 +150,25 @@
 \contentsline {section}{\numberline {3.5}Model fizyczny bazy danych}{38}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}Model fizyczny dla środowiska SQLite}{38}{subsection.3.5.1}%
 \contentsline {subsection}{\numberline {3.5.2}Model fizyczny dla środowiska PostgreSQL}{38}{subsection.3.5.2}%
-\contentsline {chapter}{\numberline {4}Implementacja bazy danych i import danych}{39}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Wprowadzenie}{39}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Definicja i inicjalizacja struktur danych}{39}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Zasilenie bazy danymi demonstracyjnymi}{40}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Koncepcja mechanizmów masowego importu (ETL)}{40}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Mechanizm COPY w PostgreSQL}{40}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Mechanizm Batch Insert w SQLite}{41}{subsection.4.4.2}%
-\contentsline {chapter}{\numberline {5}Zapytania do bazy danych (SQLite PostgreSQL)}{42}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Wprowadzenie}{42}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Część 1: Zapytania w dialekcie SQLite}{42}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Arytmetyka dat w SQLite (julianday)}{42}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Agregacja i złączenia wewnętrzne (INNER JOIN)}{42}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Połączenia asymetryczne (LEFT JOIN)}{42}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}Operatory zbiorowe (EXCEPT)}{43}{subsection.5.2.4}%
-\contentsline {subsection}{\numberline {5.2.5}Agregacja tekstowa (GROUP\_CONCAT)}{43}{subsection.5.2.5}%
-\contentsline {section}{\numberline {5.3}Część 2: Zaawansowane zapytania PostgreSQL}{43}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Zaawansowana agregacja tekstowa (STRING\_AGG)}{43}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Selektywna agregacja (Klauzula FILTER)}{43}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Funkcje okna (Window Functions)}{44}{subsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.3.4}Natywna arytmetyka interwałów dat (INTERVAL)}{44}{subsection.5.3.4}%
-\contentsline {subsection}{\numberline {5.3.5}Wyrażenia tablicowe (CTE \sphinxhyphen {} WITH)}{44}{subsection.5.3.5}%
-\contentsline {section}{\numberline {5.4}Implementacja skryptowa}{44}{section.5.4}%
+\contentsline {chapter}{\numberline {4}Implementacja bazy danych i import danych}{40}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Wprowadzenie}{40}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Definicja i inicjalizacja struktur danych}{40}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Zasilenie bazy danymi demonstracyjnymi}{41}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Koncepcja mechanizmów masowego importu (ETL)}{41}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Mechanizm COPY w PostgreSQL}{41}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Mechanizm Batch Insert w SQLite}{42}{subsection.4.4.2}%
+\contentsline {chapter}{\numberline {5}Zapytania do bazy danych (SQLite PostgreSQL)}{43}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Wprowadzenie}{43}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Część 1: Zapytania w dialekcie SQLite}{43}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Arytmetyka dat w SQLite (julianday)}{43}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Agregacja i złączenia wewnętrzne (INNER JOIN)}{43}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Połączenia asymetryczne (LEFT JOIN)}{43}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Operatory zbiorowe (EXCEPT)}{44}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5}Agregacja tekstowa (GROUP\_CONCAT)}{44}{subsection.5.2.5}%
+\contentsline {section}{\numberline {5.3}Część 2: Zaawansowane zapytania PostgreSQL}{44}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Zaawansowana agregacja tekstowa (STRING\_AGG)}{44}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Selektywna agregacja (Klauzula FILTER)}{44}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Funkcje okna (Window Functions)}{45}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Natywna arytmetyka interwałów dat (INTERVAL)}{45}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.5}Wyrażenia tablicowe (CTE \sphinxhyphen {} WITH)}{45}{subsection.5.3.5}%
+\contentsline {section}{\numberline {5.4}Implementacja skryptowa}{45}{section.5.4}%

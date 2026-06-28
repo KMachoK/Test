@@ -88,6 +88,12 @@ Ze względu na występowanie relacji wiele-do-wielu (M:N) pomiędzy encjami ``Kl
 
 Model w notacji Chena
 ---------------------
+.. figure:: /_static/Schemat-chena.png
+   :width: 80%
+   :align: center
+   :alt: Schemat Chena dla bazy danych
+
+   Schemat logiczny bazy danych (Schemat Chena).
 
 Model logiczny i proces normalizacji
 ====================================

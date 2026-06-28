@@ -362,6 +362,15 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/tex-gyre/ec-qtmr.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/tex-gyre/ec-qtmri.tfm
+INPUT ./Schemat-chena.png
+INPUT ./Schemat-chena.png
+INPUT ./Schemat-chena.png
+INPUT ./Schemat-chena.png
+INPUT ./Schemat-chena.png
+INPUT ./Schemat-chena.png
+INPUT ./Schemat-chena.png
+INPUT ./Schemat-chena.png
+INPUT ./Schemat-chena.png
 INPUT ./sprawozdanie-284384.ind
 INPUT ./sprawozdanie-284384.ind
 INPUT sprawozdanie-284384.ind
