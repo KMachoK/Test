@@ -8,7 +8,7 @@
 
 project = 'Sprawozdanie-284384'
 copyright = '2026, Olaf Chomicki, Konrad Machowski, Wiktor Wydrzyński'
-author = 'Olaf Chomicki, Konrad Machowski, Wiktor Wydrzyński'
+author = 'Konrad Machowski'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -51,7 +51,7 @@ latex_elements = {
 
 latex_documents = [
     ('index', 'sprawozdanie-284384.tex', 'Sprawozdanie 284384: Bazy Danych', 
-     'Olaf Chomicki, Konrad Machowski, Wiktor Wydrzyński', 'manual'),
+     'Konrad Machowski', 'manual'),
 ]
 
 latex_show_urls = 'footnote'
