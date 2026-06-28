@@ -110,8 +110,15 @@ Ostateczna struktura tabel (3NF)
 * **Samochody:** ID_Samochodu (PK), ID_Kategorii (FK), Marka, Model, Nr_Rejestracyjny, Rok_Produkcji
 * **Wypożyczenia:** ID_Wypozyczenia (PK), ID_Klienta (FK), ID_Samochodu (FK), Data_Od, Data_Do, Status
 
-Schemat ERD w notacji Barkera
------------------------------
+Schemat ERD
+-----------
+.. figure:: /_static/Schemat-erd.png
+   :width: 80%
+   :align: center
+   :figclass: H
+   :alt: Schemat ERD dla bazy danych
+
+   Schemat logiczny bazy danych (Schemat ERD).
 
 Model fizyczny bazy danych
 ==========================
