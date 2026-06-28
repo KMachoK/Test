@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2.6. Partycjonowanie danych &#8212; Sprawozdanie-z-laboratoriów  documentation</title>
+    <title>Partycjonowanie danych &#8212; Sprawozdanie-z-laboratoriów  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=5ecbeea2" />
     <link rel="stylesheet" type="text/css" href="../../_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=27fed22d" />
@@ -34,18 +34,18 @@
           <div class="body" role="main">
             
   <section id="partycjonowanie-danych">
-<h1>2.6. Partycjonowanie danych<a class="headerlink" href="#partycjonowanie-danych" title="Link to this heading">¶</a></h1>
+<h1>Partycjonowanie danych<a class="headerlink" href="#partycjonowanie-danych" title="Link to this heading">¶</a></h1>
 <p><strong>Autorzy</strong></p>
 <ol class="arabic simple">
 <li><p>Michał Bystrzak</p></li>
 <li><p>Damian Dominiak</p></li>
 </ol>
 <section id="wstep-i-istota-problemu">
-<h2>2.6.1 Wstęp i istota problemu<a class="headerlink" href="#wstep-i-istota-problemu" title="Link to this heading">¶</a></h2>
+<h2>Wstęp i istota problemu<a class="headerlink" href="#wstep-i-istota-problemu" title="Link to this heading">¶</a></h2>
 <p>W dobie systemów informatycznych przetwarzających gigabajty lub terabajty informacji (tzw. VLDB - Very Large Databases), tradycyjne podejście do składowania danych staje się wysoce niewydajne. Kiedy pojedyncza tabela rozrasta się do setek milionów rekordów, fizyczne ograniczenia sprzętowe oraz narzuty na zarządzanie indeksami powodują drastyczny spadek wydajności. Partycjonowanie to zaawansowana technika architektoniczna, polegająca na logicznym podziale jednej, ogromnej tabeli na mniejsze, odseparowane fizycznie fragmenty nazywane partycjami. Z perspektywy aplikacji docelowej oraz zapytań SQL, tabela wciąż prezentuje się i zachowuje jak spójna, pojedyncza relacja.</p>
 </section>
 <section id="cele-stosowania-partycjonowania-danych">
-<h2>2.6.2 Cele stosowania partycjonowania danych<a class="headerlink" href="#cele-stosowania-partycjonowania-danych" title="Link to this heading">¶</a></h2>
+<h2>Cele stosowania partycjonowania danych<a class="headerlink" href="#cele-stosowania-partycjonowania-danych" title="Link to this heading">¶</a></h2>
 <p>Implementacja mechanizmu partycjonowania w systemach relacyjnych jest podyktowana chęcią rozwiązania konkretnych problemów wydajnościowych i administracyjnych. Główne cele to:</p>
 <ul class="simple">
 <li><p><strong>Zwiększenie wydajności zapytań (Query Performance):</strong> Fundamentalnym celem jest eliminacja konieczności skanowania całej tabeli (Full Table Scan). Dzięki mechanizmowi <em>Partition Pruning</em> (odcinanie partycji), planista zapytań analizuje warunki zdefiniowane w klauzuli <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> i kieruje odczyt wyłącznie do tych fizycznych plików, które mogą zawierać poszukiwane dane.</p></li>
@@ -54,7 +54,7 @@
 </ul>
 </section>
 <section id="zastosowanie-partycjonowania">
-<h2>2.6.3 Zastosowanie partycjonowania<a class="headerlink" href="#zastosowanie-partycjonowania" title="Link to this heading">¶</a></h2>
+<h2>Zastosowanie partycjonowania<a class="headerlink" href="#zastosowanie-partycjonowania" title="Link to this heading">¶</a></h2>
 <p>Technika ta nie jest uniwersalnym rozwiązaniem dla każdej bazy danych, lecz sprawdza się w specyficznych, wymagających scenariuszach:</p>
 <ul class="simple">
 <li><p><strong>Hurtownie danych (OLAP):</strong> Systemy analityczne gromadzące dane historyczne. Partycjonowanie pozwala tam na błyskawiczne agregowanie danych (np. sumowanie przychodów z konkretnego miesiąca) bez wczytywania do pamięci RAM danych z całej dekady.</p></li>
@@ -63,7 +63,7 @@
 </ul>
 </section>
 <section id="zalety-i-wady-partycjonowania">
-<h2>2.6.4 Zalety i wady partycjonowania<a class="headerlink" href="#zalety-i-wady-partycjonowania" title="Link to this heading">¶</a></h2>
+<h2>Zalety i wady partycjonowania<a class="headerlink" href="#zalety-i-wady-partycjonowania" title="Link to this heading">¶</a></h2>
 <p>Jak każda technika optymalizacyjna, partycjonowanie stanowi kompromis inżynieryjny (Trade-off).</p>
 <p><strong>Zalety:</strong></p>
 <ul class="simple">
@@ -79,7 +79,7 @@
 </ul>
 </section>
 <section id="implementacja-partycjonowania-w-postgresql">
-<h2>2.6.5 Implementacja partycjonowania w PostgreSQL<a class="headerlink" href="#implementacja-partycjonowania-w-postgresql" title="Link to this heading">¶</a></h2>
+<h2>Implementacja partycjonowania w PostgreSQL<a class="headerlink" href="#implementacja-partycjonowania-w-postgresql" title="Link to this heading">¶</a></h2>
 <p>Począwszy od wersji 10, PostgreSQL oferuje natywne wsparcie dla partycjonowania deklaratywnego. Eliminuje to konieczność ręcznego pisania skomplikowanych wyzwalaczy czy reguł (rules). Silnik obsługuje trzy główne strategie przydziału danych:</p>
 <ul class="simple">
 <li><p><strong>Zakresowe (RANGE):</strong> Dane są dzielone na podstawie ciągłych przedziałów wartości. Najczęściej wykorzystywanym kluczem są typy daty i czasu (np. jedna partycja dla <code class="docutils literal notranslate"><span class="pre">2025-01-01</span></code> do <code class="docutils literal notranslate"><span class="pre">2025-01-31</span></code>) lub sekwencje numeryczne.</p></li>
@@ -88,7 +88,7 @@
 </ul>
 </section>
 <section id="ograniczenia-i-obejscie-w-srodowisku-sqlite">
-<h2>2.6.6 Ograniczenia i obejście w środowisku SQLite<a class="headerlink" href="#ograniczenia-i-obejscie-w-srodowisku-sqlite" title="Link to this heading">¶</a></h2>
+<h2>Ograniczenia i obejście w środowisku SQLite<a class="headerlink" href="#ograniczenia-i-obejscie-w-srodowisku-sqlite" title="Link to this heading">¶</a></h2>
 <p>W przeciwieństwie do potężnych, serwerowych silników RDBMS takich jak PostgreSQL, lekka i plikowa biblioteka SQLite <strong>nie posiada</strong> natywnego mechanizmu partycjonowania deklaratywnego. Wynika to z jej osadzonej (embedded) architektury.</p>
 <p>Niemniej jednak, efekt partycjonowania w SQLite można emulować za pomocą programistycznego podejścia warstwowego:
 1. <strong>Podział fizyczny:</strong> Utworzenie wielu mniejszych, niezależnych tabel (np. <code class="docutils literal notranslate"><span class="pre">zlecenia_2025</span></code>, <code class="docutils literal notranslate"><span class="pre">zlecenia_2026</span></code>).

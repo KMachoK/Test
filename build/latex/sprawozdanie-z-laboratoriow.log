@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.6.28)  28 JUN 2026 20:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.6.28)  28 JUN 2026 20:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -919,7 +919,7 @@ L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `sprawozdanie-z-laboratoriow.out' has not cha
 nged.
-(rerunfilecheck)             Checksum: 9BB1F20CDA3A47F6B87482F1821CF74E;39085.
+(rerunfilecheck)             Checksum: 45A5CE4F8BA7E74D25DCDAE5F2D1D933;38751.
  ) 
 Here is how much of TeX's memory you used:
  17541 strings out of 476182
@@ -938,7 +938,7 @@ texmf/fonts/type1/public/tex-gyre/qhvb.pfb></usr/share/texmf/fonts/type1/public
 fonts/t1xbtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xt
 t.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/txfonts/tcxtt.pfb>
-Output written on sprawozdanie-z-laboratoriow.pdf (48 pages, 364647 bytes).
+Output written on sprawozdanie-z-laboratoriow.pdf (48 pages, 363543 bytes).
 PDF statistics:
  1206 PDF objects out of 1440 (max. 8388607)
  1126 compressed objects within 12 object streams

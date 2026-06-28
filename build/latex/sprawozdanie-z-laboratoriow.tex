@@ -1902,7 +1902,7 @@ fio\PYG{+w}{ }\PYGZhy{}\PYGZhy{}name\PYG{o}{=}test\PYGZus{}bazy\PYG{+w}{ }\PYGZh
 \sphinxstepscope
 
 
-\section{2.6. Partycjonowanie danych}
+\section{Partycjonowanie danych}
 \label{\detokenize{rozdzial_2/rozdzial_26/index:partycjonowanie-danych}}\label{\detokenize{rozdzial_2/rozdzial_26/index::doc}}
 \sphinxAtStartPar
 \sphinxstylestrong{Autorzy}
@@ -1919,13 +1919,13 @@ Damian Dominiak
 \end{enumerate}
 
 
-\subsection{2.6.1 Wstęp i istota problemu}
+\subsection{Wstęp i istota problemu}
 \label{\detokenize{rozdzial_2/rozdzial_26/index:wstep-i-istota-problemu}}
 \sphinxAtStartPar
 W dobie systemów informatycznych przetwarzających gigabajty lub terabajty informacji (tzw. VLDB \sphinxhyphen{} Very Large Databases), tradycyjne podejście do składowania danych staje się wysoce niewydajne. Kiedy pojedyncza tabela rozrasta się do setek milionów rekordów, fizyczne ograniczenia sprzętowe oraz narzuty na zarządzanie indeksami powodują drastyczny spadek wydajności. Partycjonowanie to zaawansowana technika architektoniczna, polegająca na logicznym podziale jednej, ogromnej tabeli na mniejsze, odseparowane fizycznie fragmenty nazywane partycjami. Z perspektywy aplikacji docelowej oraz zapytań SQL, tabela wciąż prezentuje się i zachowuje jak spójna, pojedyncza relacja.
 
 
-\subsection{2.6.2 Cele stosowania partycjonowania danych}
+\subsection{Cele stosowania partycjonowania danych}
 \label{\detokenize{rozdzial_2/rozdzial_26/index:cele-stosowania-partycjonowania-danych}}
 \sphinxAtStartPar
 Implementacja mechanizmu partycjonowania w systemach relacyjnych jest podyktowana chęcią rozwiązania konkretnych problemów wydajnościowych i administracyjnych. Główne cele to:
@@ -1945,7 +1945,7 @@ Implementacja mechanizmu partycjonowania w systemach relacyjnych jest podyktowan
 \end{itemize}
 
 
-\subsection{2.6.3 Zastosowanie partycjonowania}
+\subsection{Zastosowanie partycjonowania}
 \label{\detokenize{rozdzial_2/rozdzial_26/index:zastosowanie-partycjonowania}}
 \sphinxAtStartPar
 Technika ta nie jest uniwersalnym rozwiązaniem dla każdej bazy danych, lecz sprawdza się w specyficznych, wymagających scenariuszach:
@@ -1965,7 +1965,7 @@ Technika ta nie jest uniwersalnym rozwiązaniem dla każdej bazy danych, lecz sp
 \end{itemize}
 
 
-\subsection{2.6.4 Zalety i wady partycjonowania}
+\subsection{Zalety i wady partycjonowania}
 \label{\detokenize{rozdzial_2/rozdzial_26/index:zalety-i-wady-partycjonowania}}
 \sphinxAtStartPar
 Jak każda technika optymalizacyjna, partycjonowanie stanowi kompromis inżynieryjny (Trade\sphinxhyphen{}off).
@@ -2005,7 +2005,7 @@ Spadek wydajności w przypadku zapytań omijących klucz partycjonowania \texten
 \end{itemize}
 
 
-\subsection{2.6.5 Implementacja partycjonowania w PostgreSQL}
+\subsection{Implementacja partycjonowania w PostgreSQL}
 \label{\detokenize{rozdzial_2/rozdzial_26/index:implementacja-partycjonowania-w-postgresql}}
 \sphinxAtStartPar
 Począwszy od wersji 10, PostgreSQL oferuje natywne wsparcie dla partycjonowania deklaratywnego. Eliminuje to konieczność ręcznego pisania skomplikowanych wyzwalaczy czy reguł (rules). Silnik obsługuje trzy główne strategie przydziału danych:
@@ -2025,7 +2025,7 @@ Począwszy od wersji 10, PostgreSQL oferuje natywne wsparcie dla partycjonowania
 \end{itemize}
 
 
-\subsection{2.6.6 Ograniczenia i obejście w środowisku SQLite}
+\subsection{Ograniczenia i obejście w środowisku SQLite}
 \label{\detokenize{rozdzial_2/rozdzial_26/index:ograniczenia-i-obejscie-w-srodowisku-sqlite}}
 \sphinxAtStartPar
 W przeciwieństwie do potężnych, serwerowych silników RDBMS takich jak PostgreSQL, lekka i plikowa biblioteka SQLite \sphinxstylestrong{nie posiada} natywnego mechanizmu partycjonowania deklaratywnego. Wynika to z jej osadzonej (embedded) architektury.
@@ -2063,20 +2063,12 @@ Dawid Szokało
 
 \end{enumerate}
 
-\sphinxlineitem{Kierunek}
-\sphinxAtStartPar
-Informatyka Techniczna, Politechnika Wrocławska
-
-\sphinxlineitem{Przedmiot}
-\sphinxAtStartPar
-Bazy Danych / Projekt Laboratoryjny
-
 \end{description}\end{quote}
 
 \sphinxstepscope
 
 
-\subsection{1. Model bezpieczeństwa CIA i ochrona infrastruktury}
+\subsection{Model bezpieczeństwa CIA i ochrona infrastruktury}
 \label{\detokenize{rozdzial_2/rozdzial_27/rozdzial_1:model-bezpieczenstwa-cia-i-ochrona-infrastruktury}}\label{\detokenize{rozdzial_2/rozdzial_27/rozdzial_1::doc}}
 \sphinxAtStartPar
 Rozważając bezpieczeństwo systemów bazodanowych, należy spojrzeć na problem warstwowo. Najniższą, a zarazem najbardziej fundamentalną warstwą jest ochrona samej infrastruktury sprzętowej i sieciowej, na której operuje silnik bazy danych (DBMS). Zanim przejdziemy do szczegółowych konfiguracji silnika, konieczne jest zdefiniowanie nadrzędnych celów bezpieczeństwa oraz zapewnienie izolacji środowiska uruchomieniowego.
@@ -2154,7 +2146,7 @@ Aby zminimalizować to ryzyko, stosuje się następujące praktyki:
 \sphinxstepscope
 
 
-\subsection{2. Ataki na bazy danych i luki w zabezpieczeniach}
+\subsection{Ataki na bazy danych i luki w zabezpieczeniach}
 \label{\detokenize{rozdzial_2/rozdzial_27/rozdzial_2:ataki-na-bazy-danych-i-luki-w-zabezpieczeniach}}\label{\detokenize{rozdzial_2/rozdzial_27/rozdzial_2::doc}}
 \sphinxAtStartPar
 Ponieważ bazy danych przechowują najbardziej krytyczne informacje organizacji, stanowią główny cel cyberataków. Według zestawień takich jak OWASP Top 10, podatności związane ze wstrzykiwaniem kodu (Injection) oraz błędną konfiguracją od lat utrzymują się w czołówce zagrożeń. Zrozumienie mechaniki tych ataków jest kluczowe do zaprojektowania skutecznych mechanizmów obronnych w warstwie aplikacyjnej i bazodanowej.
@@ -2290,7 +2282,7 @@ pozwoli narzędziu na wykrycie typu wstrzyknięcia (np. czasowe lub błędowe), 
 \sphinxstepscope
 
 
-\subsection{3. Zarządzanie tożsamością, uwierzytelnianie i autoryzacja}
+\subsection{Zarządzanie tożsamością, uwierzytelnianie i autoryzacja}
 \label{\detokenize{rozdzial_2/rozdzial_27/rozdzial_3:zarzadzanie-tozsamoscia-uwierzytelnianie-i-autoryzacja}}\label{\detokenize{rozdzial_2/rozdzial_27/rozdzial_3::doc}}
 \sphinxAtStartPar
 Po zabezpieczeniu infrastruktury sieciowej oraz aplikacji przed atakami typu Injection, kolejną linią obrony jest ścisła kontrola dostępu do samych danych. W architekturze systemów bazodanowych proces ten opiera się na trzech filarach: zarządzaniu tożsamością (Identity Management), uwierzytelnianiu (Authentication) oraz autoryzacji (Authorization). Prawidłowa implementacja tych mechanizmów gwarantuje, że zasada najmniejszego uprzywilejowania (PoLP \sphinxhyphen{} Principle of Least Privilege) może być skutecznie egzekwowana w całym systemie.
@@ -2374,7 +2366,7 @@ Zgodnie z dobrymi praktykami nurtu DevSecOps, środowiska produkcyjne powinny wy
 \sphinxstepscope
 
 
-\subsection{4. Kryptografia w bazach danych}
+\subsection{Kryptografia w bazach danych}
 \label{\detokenize{rozdzial_2/rozdzial_27/rozdzial_4:kryptografia-w-bazach-danych}}\label{\detokenize{rozdzial_2/rozdzial_27/rozdzial_4::doc}}
 \sphinxAtStartPar
 Nawet najbardziej rygorystyczne mechanizmy kontroli dostępu i izolacji sieciowej mogą zawieść w obliczu zaawansowanych ataków (tzw. APT \textendash{} Advanced Persistent Threats) lub błędów ludzkich. W myśl zasady obrony w głąb (Defense in Depth), ostatnią linią ochrony informacji jest kryptografia. Jej implementacja w środowiskach bazodanowych dzieli się na trzy główne obszary: ochronę danych w spoczynku, w tranzycie oraz w użyciu.
@@ -2446,7 +2438,7 @@ Ponadto, wracając do zagadnień z zakresu uwierzytelniania, należy pamiętać 
 \sphinxstepscope
 
 
-\subsection{5. Audyt, logowanie i wykrywanie anomalii}
+\subsection{Audyt, logowanie i wykrywanie anomalii}
 \label{\detokenize{rozdzial_2/rozdzial_27/rozdzial_5:audyt-logowanie-i-wykrywanie-anomalii}}\label{\detokenize{rozdzial_2/rozdzial_27/rozdzial_5::doc}}
 \sphinxAtStartPar
 Nawet najsilniejsze mechanizmy prewencyjne, takie jak kontrola dostępu czy szyfrowanie, nie gwarantują stuprocentowego bezpieczeństwa. W przypadku udanego ataku lub błędu wewnętrznego (tzw. zagrożenia \sphinxstyleemphasis{Insider Threat}), kluczowe staje się odtworzenie przebiegu zdarzeń. Temu celowi służą mechanizmy audytu i logowania, które stanowią fundament dla systemów wykrywania anomalii oraz zapewniają niezaprzeczalność (ang. \sphinxstyleemphasis{Non\sphinxhyphen{}repudiation}) operacji wykonywanych na danych.
@@ -2493,7 +2485,7 @@ System wykryje anomalię i podniesie alarm (lub zablokuje zapytanie), gdy np.:
 \sphinxstepscope
 
 
-\subsection{6. Bezpieczeństwo kopii zapasowych i Disaster Recovery}
+\subsection{Bezpieczeństwo kopii zapasowych i Disaster Recovery}
 \label{\detokenize{rozdzial_2/rozdzial_27/rozdzial_6:bezpieczenstwo-kopii-zapasowych-i-disaster-recovery}}\label{\detokenize{rozdzial_2/rozdzial_27/rozdzial_6::doc}}
 \sphinxAtStartPar
 Systemy prewencyjne i detekcyjne nie zawsze są w stanie zatrzymać zaawansowane ataki, takie jak ransomware, czy też zapobiec fizycznym awariom infrastruktury. W takich scenariuszach ostateczną linią obrony stają się mechanizmy odtwarzania danych po awarii. Bezpieczeństwo samych kopii zapasowych jest równie krytyczne co bezpieczeństwo głównej instancji bazy danych \textendash{} skompromitowany backup często ostatecznie przekreśla szanse na powrót organizacji do normalnego funkcjonowania operacyjnego.
@@ -2542,9 +2534,12 @@ Niezależnie od stopnia skomplikowania architektury chmurowej, każda polityka D
 
 
 \section{Kopie zapasowe i odzyskiwanie danych}
-\label{\detokenize{rozdzial_2/rozdzial_28/index:kopie-zapasowe-i-odzyskiwanie-danych}}\label{\detokenize{rozdzial_2/rozdzial_28/index::doc}}
+\label{\detokenize{rozdzial_2/rozdzial_28/index:kopie-zapasowe-i-odzyskiwanie-danych}}\label{\detokenize{rozdzial_2/rozdzial_28/index::doc}}\begin{quote}\begin{description}
+\sphinxlineitem{Autorzy}
 \sphinxAtStartPar
-\sphinxstylestrong{Autorzy:} Norbert Antonovitch, Michał Bednarczyk, Jan Balazs de Borbatviz
+Norbert Antonovitch, Michał Bednarczyk, Jan Balazs de Borbatviz
+
+\end{description}\end{quote}
 
 
 \subsection{Wstęp}
