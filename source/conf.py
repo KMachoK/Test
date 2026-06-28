@@ -27,6 +27,7 @@ html_static_path = ['_static']
 # -- Options for LaTeX output ------------------------------------------------
 # Optymalizacja generowania PDF - eliminacja pustych stron między rozdziałami
 latex_elements = {
+    'figure_align': 'H',
     'papersize': 'a4paper',
     'pointsize': '11pt',
     'fncychap': '\\usepackage[Bjarne]{fncychap}',

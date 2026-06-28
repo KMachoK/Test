@@ -1,11 +1,11 @@
 # Fdb version 4
-["makeindex sprawozdanie-284384.idx"] 1782680941.91676 "sprawozdanie-284384.idx" "sprawozdanie-284384.ind" "sprawozdanie-284384" 1782680948.23612 0
-  "sprawozdanie-284384.idx" 1782680945.73556 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex sprawozdanie-284384.idx"] 1782681093.0217 "sprawozdanie-284384.idx" "sprawozdanie-284384.ind" "sprawozdanie-284384" 1782681099.09586 0
+  "sprawozdanie-284384.idx" 1782681096.69356 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "sprawozdanie-284384.ilg"
   "sprawozdanie-284384.ind"
   (rewritten before read)
-["pdflatex"] 1782680945.07538 "sprawozdanie-284384.tex" "sprawozdanie-284384.pdf" "sprawozdanie-284384" 1782680948.23636 0
+["pdflatex"] 1782681096.10313 "sprawozdanie-284384.tex" "sprawozdanie-284384.pdf" "sprawozdanie-284384" 1782681099.09609 0
   "/etc/texmf/web2c/texmf.cnf" 1782676926.4086 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1095.tfm" 1136768653 3584 929cdff2b7a8c11bd4d49fd68cb0ae70 ""
@@ -165,7 +165,7 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1782676988 6800787 26e1bd60576e0c4f372caa3ed0ac351f ""
   "Schemat-chena.png" 1782680455.45757 1477108 9a1520bcfd566eaf3faa5b8046fc5e20 ""
   "sphinx.sty" 1782676758.9626 57237 e19e1f380d737472c975e274a37a2126 ""
-  "sphinxhighlight.sty" 1782680938.22156 7553 83fb52292c17957d9f4aadcb28c57a87 ""
+  "sphinxhighlight.sty" 1782681089.28056 7553 83fb52292c17957d9f4aadcb28c57a87 ""
   "sphinxlatexadmonitions.sty" 1782676758.9636 19258 40d230fa86bf8c791de90924bc0a9916 ""
   "sphinxlatexcontainers.sty" 1782676758.9636 900 d61f923db071a7b54d3cee8a1e6935d3 ""
   "sphinxlatexgraphics.sty" 1782676758.9636 4918 c9266041d02bc615d54b890e96e3acd3 ""
@@ -180,16 +180,16 @@
   "sphinxlatexstyletext.sty" 1782676758.9646 6932 46506bfce90adabe816de566561356fc ""
   "sphinxlatextables.sty" 1782676758.9656 63776 301b4897e4c838a7aa5af2eb139208e8 ""
   "sphinxmanual.cls" 1782676758.9656 4241 7b0d7a37df7b5715fb0dbd585c52ecdb ""
-  "sphinxmessages.sty" 1782680938.69356 745 3f5fcd6cdd7964ed608767954a8ced6f ""
+  "sphinxmessages.sty" 1782681089.58556 745 3f5fcd6cdd7964ed608767954a8ced6f ""
   "sphinxoptionsgeometry.sty" 1782676758.9656 2060 6c27b3eba37bde592ae8908ab2c1ac0f ""
   "sphinxoptionshyperref.sty" 1782676758.9656 1093 e468489bae7631a7f387b4b0f7bc15d4 ""
   "sphinxpackageboxes.sty" 1782676758.9656 36106 1be2053eb1cb9b083b3a75e3657bcb24 ""
   "sphinxpackagefootnote.sty" 1782676758.9666 15497 e3d010897db5f6f93f75d08335769b1f ""
-  "sprawozdanie-284384.aux" 1782680948.07056 51368 bff6a25285763447e55227a3da76f8b2 "pdflatex"
-  "sprawozdanie-284384.ind" 1782680941.94356 0 d41d8cd98f00b204e9800998ecf8427e "makeindex sprawozdanie-284384.idx"
-  "sprawozdanie-284384.out" 1782680948.07556 40580 bee9e28cd906530f4e74386250bf70b1 "pdflatex"
-  "sprawozdanie-284384.tex" 1782680938.68756 205852 b8bf5bbc275cb91f7dad39dd220331b9 ""
-  "sprawozdanie-284384.toc" 1782680948.07556 16915 c5ff28af050419c355425a203e805c39 "pdflatex"
+  "sprawozdanie-284384.aux" 1782681098.96756 51368 326d6d43cfd3f834b0b19825e9b1e347 "pdflatex"
+  "sprawozdanie-284384.ind" 1782681093.03656 0 d41d8cd98f00b204e9800998ecf8427e "makeindex sprawozdanie-284384.idx"
+  "sprawozdanie-284384.out" 1782681098.97256 40580 bee9e28cd906530f4e74386250bf70b1 "pdflatex"
+  "sprawozdanie-284384.tex" 1782681089.58056 205849 e9647953c62ffc4f61b511ae33c9ee49 ""
+  "sprawozdanie-284384.toc" 1782681098.97256 16915 ae5bb41ecc359528fda0b2d50ab06970 "pdflatex"
   (generated)
   "sprawozdanie-284384.aux"
   "sprawozdanie-284384.idx"

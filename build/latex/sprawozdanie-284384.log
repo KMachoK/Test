@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.6.28)  28 JUN 2026 21:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.6.28)  28 JUN 2026 21:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -942,10 +942,10 @@ Package rerunfilecheck Info: File `sprawozdanie-284384.out' has not changed.
 (rerunfilecheck)             Checksum: BEE9E28CD906530F4E74386250BF70B1;40580.
  ) 
 Here is how much of TeX's memory you used:
- 17576 strings out of 476182
- 305231 string characters out of 5795595
+ 17577 strings out of 476182
+ 305241 string characters out of 5795595
  2076975 words of memory out of 5000000
- 38879 multiletter control sequences out of 15000+600000
+ 38880 multiletter control sequences out of 15000+600000
  626566 words of font info for 103 fonts, out of 8000000 for 9000
  15 hyphenation exceptions out of 8191
  72i,13n,83p,1208b,718s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -958,7 +958,7 @@ texmf/fonts/type1/public/tex-gyre/qhvb.pfb></usr/share/texmf/fonts/type1/public
 fonts/t1xbtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xt
 t.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/txfonts/tcxtt.pfb>
-Output written on sprawozdanie-284384.pdf (52 pages, 1007389 bytes).
+Output written on sprawozdanie-284384.pdf (52 pages, 1007604 bytes).
 PDF statistics:
  1260 PDF objects out of 1440 (max. 8388607)
  1174 compressed objects within 12 object streams

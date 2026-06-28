@@ -142,14 +142,14 @@
 \contentsline {subsection}{\numberline {3.3.2}Zdefiniowane atrybuty}{37}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}Opis związków}{37}{subsection.3.3.3}%
 \contentsline {subsection}{\numberline {3.3.4}Identyfikacja encji słabych}{37}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5}Model w notacji Chena}{37}{subsection.3.3.5}%
-\contentsline {section}{\numberline {3.4}Model logiczny i proces normalizacji}{37}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Proces normalizacji}{37}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.3.5}Model w notacji Chena}{38}{subsection.3.3.5}%
+\contentsline {section}{\numberline {3.4}Model logiczny i proces normalizacji}{38}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Proces normalizacji}{38}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}Ostateczna struktura tabel (3NF)}{38}{subsection.3.4.2}%
 \contentsline {subsection}{\numberline {3.4.3}Schemat ERD w notacji Barkera}{38}{subsection.3.4.3}%
 \contentsline {section}{\numberline {3.5}Model fizyczny bazy danych}{38}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}Model fizyczny dla środowiska SQLite}{38}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Model fizyczny dla środowiska PostgreSQL}{38}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.2}Model fizyczny dla środowiska PostgreSQL}{39}{subsection.3.5.2}%
 \contentsline {chapter}{\numberline {4}Implementacja bazy danych i import danych}{40}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Wprowadzenie}{40}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Definicja i inicjalizacja struktur danych}{40}{section.4.2}%
