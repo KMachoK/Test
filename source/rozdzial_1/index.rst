@@ -2,10 +2,8 @@
 Wstęp do sprawozdania oraz linki
 ================================
 
-:Autorzy:
-    1. Olaf Chomicki
-    2. Konrad Machowski
-    3. Wiktor Wydrzyński
+:Autor:
+    Konrad Machowski
 
 Wstęp
 =====
@@ -13,6 +11,16 @@ Wstęp
 Niniejsze sprawozdanie stanowi kompleksową dokumentację prac laboratoryjnych zrealizowanych w ramach przedmiotu Bazy Danych. Głównym założeniem projektu było przełożenie wiedzy akademickiej na praktyczne umiejętności inżynierskie, niezbędne przy projektowaniu, implementacji oraz utrzymaniu nowoczesnych systemów relacyjnych baz danych.
 
 Opracowanie przeprowadza czytelnika przez pełen cykl życia systemu bazodanowego. Proces rozpoczął się od dogłębnej analizy wymagań teoretycznych, co posłużyło jako fundament do zaprojektowania modelu pojęciowego i logicznego. Następnie architektura ta została powołana do życia poprzez fizyczną implementację w środowiskach PostgreSQL oraz SQLite. Istotnym elementem projektu była również automatyzacja i realizacja procesów wsadowego zasilania struktury rzeczywistymi danymi.
+
+Podsumowanie i wnioski z laboratorium
+=====================================
+
+Przeprowadzone zadania praktyczne oraz testy programistyczne pozwoliły na sformułowanie następujących spostrzeżeń końcowych:
+
+* **Znaczenie projektowania struktury (3NF):** Właściwe znormalizowanie bazy danych do poziomu trzeciej postaci normalnej na etapie konceptualnym jest kluczowe. Pozwala to całkowicie wyeliminować powtarzalność informacji oraz zabezpiecza system przed błędami podczas późniejszej modyfikacji lub usuwania rekordów.
+* **Specyfika systemów PostgreSQL i SQLite:** Porównanie obu silników w praktyce pokazało ich odmienne podejście do danych. PostgreSQL kładzie duży nacisk na ścisłą kontrolę typów i integralność referencyjną (klucze obce). SQLite oferuje większą lekkość, jednak kosztem braków w natywnym wsparciu dla niektórych struktur, takich jak dedykowany typ DATE.
+* **Optymalizacja masowego zapisu danych:** W warunkach produkcyjnych kluczowe dla wydajności jest unikanie pojedynczych zapytań INSERT na rzecz operacji zbiorczych. Zastosowanie metod typu ``executemany()`` w Pythonie drastycznie zmniejsza narzut komunikacyjny (overhead) i przyspiesza proces zasilania bazy.
+* **Wykorzystanie potencjału języka SQL:** Przeniesienie ciężaru obliczeniowego na silnik bazy danych poprzez zaawansowane złączenia (JOIN), podzapytania oraz operatory zbiorowe (np. UNION, INTERSECT) jest znacznie efektywniejsze. Pozwala to uniknąć zasobożernego przetwarzania i filtrowania dużych zestawów danych w pamięci RAM po stronie aplikacji klienckiej.
 
 Wykaz repozytoriów (Linki)
 ==========================

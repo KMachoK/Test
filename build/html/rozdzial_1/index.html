@@ -36,18 +36,24 @@
   <section id="wstep-do-sprawozdania-oraz-linki">
 <h1>Wstęp do sprawozdania oraz linki<a class="headerlink" href="#wstep-do-sprawozdania-oraz-linki" title="Link to this heading">¶</a></h1>
 <dl class="field-list simple">
-<dt class="field-odd">Autorzy<span class="colon">:</span></dt>
-<dd class="field-odd"><ol class="arabic simple">
-<li><p>Olaf Chomicki</p></li>
-<li><p>Konrad Machowski</p></li>
-<li><p>Wiktor Wydrzyński</p></li>
-</ol>
+<dt class="field-odd">Autor<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Konrad Machowski</p>
 </dd>
 </dl>
 <section id="wstep">
 <h2>Wstęp<a class="headerlink" href="#wstep" title="Link to this heading">¶</a></h2>
 <p>Niniejsze sprawozdanie stanowi kompleksową dokumentację prac laboratoryjnych zrealizowanych w ramach przedmiotu Bazy Danych. Głównym założeniem projektu było przełożenie wiedzy akademickiej na praktyczne umiejętności inżynierskie, niezbędne przy projektowaniu, implementacji oraz utrzymaniu nowoczesnych systemów relacyjnych baz danych.</p>
 <p>Opracowanie przeprowadza czytelnika przez pełen cykl życia systemu bazodanowego. Proces rozpoczął się od dogłębnej analizy wymagań teoretycznych, co posłużyło jako fundament do zaprojektowania modelu pojęciowego i logicznego. Następnie architektura ta została powołana do życia poprzez fizyczną implementację w środowiskach PostgreSQL oraz SQLite. Istotnym elementem projektu była również automatyzacja i realizacja procesów wsadowego zasilania struktury rzeczywistymi danymi.</p>
+</section>
+<section id="podsumowanie-i-wnioski-z-laboratorium">
+<h2>Podsumowanie i wnioski z laboratorium<a class="headerlink" href="#podsumowanie-i-wnioski-z-laboratorium" title="Link to this heading">¶</a></h2>
+<p>Przeprowadzone zadania praktyczne oraz testy programistyczne pozwoliły na sformułowanie następujących spostrzeżeń końcowych:</p>
+<ul class="simple">
+<li><p><strong>Znaczenie projektowania struktury (3NF):</strong> Właściwe znormalizowanie bazy danych do poziomu trzeciej postaci normalnej na etapie konceptualnym jest kluczowe. Pozwala to całkowicie wyeliminować powtarzalność informacji oraz zabezpiecza system przed błędami podczas późniejszej modyfikacji lub usuwania rekordów.</p></li>
+<li><p><strong>Specyfika systemów PostgreSQL i SQLite:</strong> Porównanie obu silników w praktyce pokazało ich odmienne podejście do danych. PostgreSQL kładzie duży nacisk na ścisłą kontrolę typów i integralność referencyjną (klucze obce). SQLite oferuje większą lekkość, jednak kosztem braków w natywnym wsparciu dla niektórych struktur, takich jak dedykowany typ DATE.</p></li>
+<li><p><strong>Optymalizacja masowego zapisu danych:</strong> W warunkach produkcyjnych kluczowe dla wydajności jest unikanie pojedynczych zapytań INSERT na rzecz operacji zbiorczych. Zastosowanie metod typu <code class="docutils literal notranslate"><span class="pre">executemany()</span></code> w Pythonie drastycznie zmniejsza narzut komunikacyjny (overhead) i przyspiesza proces zasilania bazy.</p></li>
+<li><p><strong>Wykorzystanie potencjału języka SQL:</strong> Przeniesienie ciężaru obliczeniowego na silnik bazy danych poprzez zaawansowane złączenia (JOIN), podzapytania oraz operatory zbiorowe (np. UNION, INTERSECT) jest znacznie efektywniejsze. Pozwala to uniknąć zasobożernego przetwarzania i filtrowania dużych zestawów danych w pamięci RAM po stronie aplikacji klienckiej.</p></li>
+</ul>
 </section>
 <section id="wykaz-repozytoriow-linki">
 <h2>Wykaz repozytoriów (Linki)<a class="headerlink" href="#wykaz-repozytoriow-linki" title="Link to this heading">¶</a></h2>

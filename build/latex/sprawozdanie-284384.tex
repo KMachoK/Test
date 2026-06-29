@@ -78,7 +78,7 @@
 
 
 \title{Sprawozdanie 284384: Bazy Danych}
-\date{Jun 28, 2026}
+\date{Jun 29, 2026}
 \release{}
 \author{Konrad Machowski}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -132,21 +132,9 @@ Dokumentacja została podzielona na pięć głównych sekcji:
 
 \chapter{Wstęp do sprawozdania oraz linki}
 \label{\detokenize{rozdzial_1/index:wstep-do-sprawozdania-oraz-linki}}\label{\detokenize{rozdzial_1/index::doc}}\begin{quote}\begin{description}
-\sphinxlineitem{Autorzy}\begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
-\item {} 
-\sphinxAtStartPar
-Olaf Chomicki
-
-\item {} 
+\sphinxlineitem{Autor}
 \sphinxAtStartPar
 Konrad Machowski
-
-\item {} 
-\sphinxAtStartPar
-Wiktor Wydrzyński
-
-\end{enumerate}
 
 \end{description}\end{quote}
 
@@ -158,6 +146,30 @@ Niniejsze sprawozdanie stanowi kompleksową dokumentację prac laboratoryjnych z
 
 \sphinxAtStartPar
 Opracowanie przeprowadza czytelnika przez pełen cykl życia systemu bazodanowego. Proces rozpoczął się od dogłębnej analizy wymagań teoretycznych, co posłużyło jako fundament do zaprojektowania modelu pojęciowego i logicznego. Następnie architektura ta została powołana do życia poprzez fizyczną implementację w środowiskach PostgreSQL oraz SQLite. Istotnym elementem projektu była również automatyzacja i realizacja procesów wsadowego zasilania struktury rzeczywistymi danymi.
+
+
+\section{Podsumowanie i wnioski z laboratorium}
+\label{\detokenize{rozdzial_1/index:podsumowanie-i-wnioski-z-laboratorium}}
+\sphinxAtStartPar
+Przeprowadzone zadania praktyczne oraz testy programistyczne pozwoliły na sformułowanie następujących spostrzeżeń końcowych:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Znaczenie projektowania struktury (3NF):} Właściwe znormalizowanie bazy danych do poziomu trzeciej postaci normalnej na etapie konceptualnym jest kluczowe. Pozwala to całkowicie wyeliminować powtarzalność informacji oraz zabezpiecza system przed błędami podczas późniejszej modyfikacji lub usuwania rekordów.
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Specyfika systemów PostgreSQL i SQLite:} Porównanie obu silników w praktyce pokazało ich odmienne podejście do danych. PostgreSQL kładzie duży nacisk na ścisłą kontrolę typów i integralność referencyjną (klucze obce). SQLite oferuje większą lekkość, jednak kosztem braków w natywnym wsparciu dla niektórych struktur, takich jak dedykowany typ DATE.
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Optymalizacja masowego zapisu danych:} W warunkach produkcyjnych kluczowe dla wydajności jest unikanie pojedynczych zapytań INSERT na rzecz operacji zbiorczych. Zastosowanie metod typu \sphinxcode{\sphinxupquote{executemany()}} w Pythonie drastycznie zmniejsza narzut komunikacyjny (overhead) i przyspiesza proces zasilania bazy.
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Wykorzystanie potencjału języka SQL:} Przeniesienie ciężaru obliczeniowego na silnik bazy danych poprzez zaawansowane złączenia (JOIN), podzapytania oraz operatory zbiorowe (np. UNION, INTERSECT) jest znacznie efektywniejsze. Pozwala to uniknąć zasobożernego przetwarzania i filtrowania dużych zestawów danych w pamięci RAM po stronie aplikacji klienckiej.
+
+\end{itemize}
 
 
 \section{Wykaz repozytoriów (Linki)}
@@ -2974,7 +2986,25 @@ Baza PostgreSQL umożliwiła implementację ścisłych typów natywnych, optymal
 
 
 \chapter{Implementacja bazy danych i import danych}
-\label{\detokenize{rozdzial_4/index:implementacja-bazy-danych-i-import-danych}}\label{\detokenize{rozdzial_4/index::doc}}
+\label{\detokenize{rozdzial_4/index:implementacja-bazy-danych-i-import-danych}}\label{\detokenize{rozdzial_4/index::doc}}\begin{quote}\begin{description}
+\sphinxlineitem{Autorzy}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+Olaf Chomicki
+
+\item {} 
+\sphinxAtStartPar
+Konrad Machowski
+
+\item {} 
+\sphinxAtStartPar
+Wiktor Wydrzyński
+
+\end{enumerate}
+
+\end{description}\end{quote}
+
 
 \section{Wprowadzenie}
 \label{\detokenize{rozdzial_4/index:wprowadzenie}}
@@ -3095,7 +3125,25 @@ W silniku SQLite wykorzystano z kolei grupowanie instrukcji poprzez metodę \sph
 
 
 \chapter{Zapytania do bazy danych (SQLite PostgreSQL)}
-\label{\detokenize{rozdzial_5/index:zapytania-do-bazy-danych-sqlite-postgresql}}\label{\detokenize{rozdzial_5/index::doc}}
+\label{\detokenize{rozdzial_5/index:zapytania-do-bazy-danych-sqlite-postgresql}}\label{\detokenize{rozdzial_5/index::doc}}\begin{quote}\begin{description}
+\sphinxlineitem{Autorzy}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+Olaf Chomicki
+
+\item {} 
+\sphinxAtStartPar
+Konrad Machowski
+
+\item {} 
+\sphinxAtStartPar
+Wiktor Wydrzyński
+
+\end{enumerate}
+
+\end{description}\end{quote}
+
 
 \section{Wprowadzenie}
 \label{\detokenize{rozdzial_5/index:wprowadzenie}}
